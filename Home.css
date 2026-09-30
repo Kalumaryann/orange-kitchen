@@ -1,0 +1,273 @@
+:root {
+  --orange: #ff8c00;
+  --dark: #333333;
+  --light: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: white;
+  color: var(--dark);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: orange;
+  color: white;
+  padding: 20px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 22px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.logo span {
+  line-height: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #333;
+  font-weight: 600;
+}
+
+.btn-orange {
+  background-color: var(--orange);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-orange.big,
+.btn-outline.big {
+  padding: 14px 26px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.btn-outline {
+  background-color: white;
+  color: var(--orange);
+  border: 2px solid var(--orange);
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 30px;
+  padding: 60px 5%;
+  align-items: center;
+}
+
+.badge {
+  background-color: #ffe3c8;
+  color: var(--orange);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin: 18px 0;
+  line-height: 1.1;
+}
+
+.orange {
+  color: var(--orange);
+}
+
+.hero p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.features {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-img img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  height: 420px;
+}
+
+section {
+  padding: 60px 5%;
+  text-align: center;
+}
+
+.menu-section {
+  background-color: var(--light);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.why {
+  background-color: #ffd9a8;
+}
+
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.why-card {
+  background-color: #fffaf3;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+footer {
+  background-color: #ffd9a8;
+  color: black;
+  text-align: center;
+  padding: 25px;
+  margin-top: 0;
+}
+
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================== */
+
+/* Medium Screens: Tablets & Small Laptops (Max 1024px) */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 44px;
+  }
+  .cards,
+  .why-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Screens: Mobile Devices & Tablets (Max 800px) */
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-img img {
+    height: auto;
+    max-height: 380px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+}
+
+/* Mobile Devices (Max 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 5%;
+    text-align: center;
+  }
+  .nav-links {
+    justify-content: center;
+    gap: 15px;
+  }
+  .hero {
+    padding: 30px 5%;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-btns button,
+  .hero-btns a {
+    width: 100%;
+  }
+  .cards,
+  .why-cards {
+    grid-template-columns: 1fr;
+  }
+  section {
+    padding: 40px 5%;
+  }
+}
+
+/* Extra Large Screens / Ultra-Wide Displays (Min 1400px) */
+@media (min-width: 1400px) {
+  .hero,
+  section,
+  .navbar {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
